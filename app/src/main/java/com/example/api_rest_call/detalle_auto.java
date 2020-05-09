@@ -41,11 +41,17 @@ public class detalle_auto extends AppCompatActivity {
                 Auto auto = response.body();
 
                 TextView text_id = (TextView) findViewById(R.id.text_id);
-                text_id.setText(auto.getId());
+                if (auto!=null){
+                    text_id.setText(auto.getId());
+                }
                 TextView text_marca = (TextView) findViewById(R.id.text_marca);
-                text_marca.setText(auto.getMarca());
+                if (auto!=null) {
+                    text_marca.setText(auto.getMarca());
+                }
                 TextView text_modelo = (TextView) findViewById(R.id.text_modelo);
-                text_modelo.setText(auto.getModelo());
+                if (auto!=null) {
+                    text_modelo.setText(auto.getModelo());
+                }
 
                 /*Toast.makeText(detalle_auto.this,
                         auto.getMarca(),

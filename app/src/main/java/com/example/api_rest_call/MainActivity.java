@@ -92,7 +92,7 @@ public class MainActivity extends ListActivity {
                 for (Auto auto: response.body()){
 
                     // listo pantalla inicial
-                    autos.add(auto.getMarca() + ": " + auto.getModelo());
+                    autos.add(auto.getId() + " - "+ auto.getMarca() + ": " + auto.getModelo());
 
                     // guardo toda la coleccion
                     lista_autos.add(auto);

@@ -61,7 +61,7 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/holo_green_dark"
         android:text="Actualizar "
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/background_light"
         android:textSize="20dp" />
 
     <Button
@@ -71,7 +71,7 @@
         android:layout_marginTop="10dp"
         android:background="@android:color/holo_red_dark"
         android:text="Eliminar"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/background_light"
         android:textSize="20dp" />
 
     <Button
@@ -79,9 +79,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="?android:attr/colorPressedHighlight"
+        android:background="@android:color/holo_orange_dark"
         android:text="Volver"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/background_light"
         android:textSize="20dp" />
 
 </LinearLayout>
