@@ -13,12 +13,19 @@
         tools:ignore="MissingConstraints">
 
 
-
         <ListView
             android:id="@android:id/list"
             android:layout_width="fill_parent"
-            android:layout_height="550dp" />
+            android:layout_height="477dp" />
 
+        <Button
+            android:id="@+id/nuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_purple"
+            android:text="Ingresar nuevo "
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />/>
 
 
     </LinearLayout>
