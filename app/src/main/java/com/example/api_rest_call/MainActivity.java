@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,12 +31,10 @@ public class MainActivity extends ListActivity {
     ArrayList<String> autos = new ArrayList<>();
     ArrayList<Auto> lista_autos = new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, autos);
 
@@ -47,38 +46,39 @@ public class MainActivity extends ListActivity {
 
     }
 
-
     @Override
     protected void onListItemClick(ListView list, View view, int position, long id) {
         super.onListItemClick(list, view, position, id);
-        /*Toast.makeText(
-                MainActivity.this,
-                // 57 list.getItemAtPosition(position).toString(),
-                "clicleo posicion" + lista_autos.get(position).getId(),
-                Toast.LENGTH_LONG
-        ) .show();*/
 
         Intent intent = new Intent(MainActivity.this, detalle_auto.class);
 
-        // 1 intent.putExtra( "id", lista_autos.get(position).getId());
-        // 2 intent.putExtra("id", position);
-
         intent.putExtra("id", lista_autos.get(position).getId());
 
-        startActivity(intent);
+        Toast.makeText(MainActivity.this, "Modificar auto.", Toast.LENGTH_LONG).show();
 
+        startActivity(intent);
+    }
+
+    public void ingresar(View v){
+        Intent intent = new Intent(MainActivity.this, ingresar_auto.class);
+
+        Toast.makeText(MainActivity.this, "Ingresar auto.", Toast.LENGTH_LONG).show();
+
+        startActivity(intent);
     }
 
     public void getListadoVehiculos(){
 
-        // Establezco una relacion de mi app con este endpoint:
+        /*// Establezco una relacion de mi app con este endpoint:
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://us-central1-be-tp3-a.cloudfunctions.net/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         // Defnimos la interfaz para que utilice la base retrofit de mi aplicacion ()
-        AutoService autoService = retrofit.create(AutoService.class);
+        AutoService autoService = retrofit.create(AutoService.class);*/
+
+        AutoService autoService = API.getAutoService();
 
         Call<List<Auto>> http_call = autoService.getAutos();
 
@@ -98,22 +98,15 @@ public class MainActivity extends ListActivity {
                     lista_autos.add(auto);
                 }
 
-                // Aviso al base adapter que cambio mi set de datos.
+                // Aviso a la base adapter que cambio mi set de datos.
                 // Renderizacion general de mi ListView
                 ((BaseAdapter) adaptador).notifyDataSetChanged();
-
             }
-
             @Override
             public void onFailure(Call<List<Auto>> call, Throwable t) {
-                // SI el servidor o la llamada no puede ejecutarse, muestro un mensaje de eror:
-                Toast.makeText(MainActivity.this, "Hubo un error con la llamada a la API", Toast.LENGTH_LONG);
-
+                // Si el servidor o la llamada no puede ejecutarse, muestro un mensaje de error:
+                Toast.makeText(MainActivity.this, "Error, fallo la llamada a la API", Toast.LENGTH_LONG).show();
             }
         });
-
     }
-
-
-
 }

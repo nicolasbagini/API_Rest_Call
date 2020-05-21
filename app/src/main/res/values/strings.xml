@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">API_Rest_Call</string>
+    <string name="ingresar_nuevo">Ingresar nuevo</string>
+
+    <string name="id">Id:</string>
+    <string name="marca">Marca:</string>
+    <string name="modelo">Modelo:</string>
+
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="volver">Volver</string>
+
+    <string name="guardar">Guardar</string>
+    <string name="salir">Salir</string>
 </resources>

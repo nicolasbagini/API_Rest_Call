@@ -10,79 +10,55 @@
     android:paddingTop="50dp"
     android:paddingRight="20dp"
     android:paddingBottom="50dp"
-    tools:context=".detalle_auto">
-
-
-    <TextView
-        android:id="@+id/textView_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Id"
-        android:textColor="@android:color/background_dark" />
-
+    tools:context=".ingresar_auto">
 
     <TextView
-        android:id="@+id/text_id"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/background_dark" />
-
-    <TextView
-        android:id="@+id/textView_marca"
-        android:layout_width="match_parent"
+        android:id="@+id/label_marca"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/marca"
         android:textColor="@android:color/background_dark" />
 
     <EditText
-        android:id="@+id/text_marca"
+        android:id="@+id/txt_marca"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/darker_gray"
+        android:ems="10"
         android:textColor="@android:color/background_dark" />
 
     <TextView
-        android:id="@+id/textView_modelo"
+        android:id="@+id/label_modelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/modelo"
         android:textColor="@android:color/background_dark" />
 
     <EditText
-        android:id="@+id/text_modelo"
+        android:id="@+id/txt_modelo"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@android:color/darker_gray"
+        android:ems="10"
         android:textColor="@android:color/background_dark" />
 
     <Button
-        android:id="@+id/btn_actualizar"
+        android:id="@+id/btn_guardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_green_dark"
-        android:text="@string/actualizar"
+        android:background="@android:color/holo_blue_dark"
+        android:text="@string/guardar"
         android:textColor="@android:color/background_light"
-        android:textSize="20sp" />
+        tools:textSize="20sp" />
 
     <Button
-        android:id="@+id/btn_eliminar"
+        android:id="@+id/btn_salir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@android:color/holo_red_dark"
-        android:text="@string/eliminar"
-        android:textColor="@android:color/background_light"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/btn_volver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/holo_orange_dark"
-        android:text="@string/volver"
+        android:text="@string/salir"
         android:textColor="@android:color/background_light"
         android:textSize="20sp" />
 

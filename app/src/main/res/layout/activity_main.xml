@@ -9,24 +9,26 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
 
         <ListView
             android:id="@android:id/list"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="477dp" />
 
         <Button
-            android:id="@+id/nuevo"
+            android:id="@+id/btn_nuevo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_purple"
-            android:text="Ingresar nuevo "
-            android:textColor="@android:color/black"
-            android:textSize="20dp" />/>
-
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/ingresar_nuevo"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:onClick="ingresar"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 
