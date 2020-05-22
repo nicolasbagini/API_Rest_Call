@@ -36,14 +36,7 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, autos);
-
-        list = (ListView) findViewById(android.R.id.list);
-
-        list.setAdapter(adaptador);
-
-        this.getListadoVehiculos();
-
+        this.getConfiguracion();
     }
 
     @Override
@@ -108,5 +101,15 @@ public class MainActivity extends ListActivity {
                 Toast.makeText(MainActivity.this, "Error, fallo la llamada a la API", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void getConfiguracion(){
+        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, autos);
+
+        list = (ListView) findViewById(android.R.id.list);
+
+        list.setAdapter(adaptador);
+
+        this.getListadoVehiculos();
     }
 }

@@ -34,7 +34,7 @@ public class detalle_auto extends AppCompatActivity {
         final String id = bundle.getString("id");
 
         // Veo que se pasa bien el Id
-        Toast.makeText(detalle_auto.this, id, Toast.LENGTH_LONG).show();
+        //Toast.makeText(detalle_auto.this, id, Toast.LENGTH_LONG).show();
 
         final EditText text_marca = (EditText) findViewById(R.id.text_marca);
         final EditText text_modelo = (EditText) findViewById(R.id.text_modelo);
@@ -99,7 +99,7 @@ public class detalle_auto extends AppCompatActivity {
 
         AutoService autoService = API.getAutoService();
 
-        Call<Auto> http_call = autoService.getAuto("id");
+        Call<Auto> http_call = autoService.getAuto(id);
 
         http_call.enqueue(new Callback<Auto>() {
             @Override
@@ -107,7 +107,7 @@ public class detalle_auto extends AppCompatActivity {
                 Auto auto = response.body();
 
                 // Veo que el auto esta vacio!!!
-                Toast.makeText(detalle_auto.this, (CharSequence) auto, Toast.LENGTH_LONG).show();
+                //Toast.makeText(detalle_auto.this, (CharSequence) auto, Toast.LENGTH_LONG).show();
 
 
                 TextView text_id = (TextView) findViewById(R.id.text_id);
@@ -146,7 +146,7 @@ public class detalle_auto extends AppCompatActivity {
     public void actualizar(String id, Auto auto){
         AutoService autoService = API.getAutoService();
 
-        Call<Auto> http_update = autoService.Update("id", auto);
+        Call<Auto> http_update = autoService.Update(id, auto);
 
         http_update.enqueue(new Callback<Auto>() {
             @Override
@@ -165,7 +165,7 @@ public class detalle_auto extends AppCompatActivity {
     public void eliminar(String id){
         AutoService autoService = API.getAutoService();
 
-        Call<Void> http_delete = autoService.Delete("id");
+        Call<Void> http_delete = autoService.Delete(id);
 
         http_delete.enqueue(new Callback<Void>() {
             @Override

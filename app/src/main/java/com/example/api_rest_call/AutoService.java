@@ -25,7 +25,7 @@ public interface AutoService {
 
     // Ruta pare el READ{id}
 
-    String API_GET_ID = "app/api/read{id}";
+    String API_GET_ID = "app/api/read/{id}";
 
     @GET(API_GET_ID)
     Call<Auto> getAuto(@Path("id") String id);
@@ -33,7 +33,7 @@ public interface AutoService {
 
     // Ruta pare el DELETE{id}
 
-    String API_DELETE = "app/api/delete{id}";
+    String API_DELETE = "app/api/delete/{id}";
 
     @DELETE(API_DELETE)
     Call<Void> Delete(@Path("id") String id);
@@ -41,7 +41,7 @@ public interface AutoService {
 
     // Ruta pare el UPDATE{id}
 
-    String API_UPDATE = "app/api/update{id}";
+    String API_UPDATE = "app/api/update/{id}";
 
     @PUT(API_UPDATE)
     Call<Auto> Update(@Path("id") String id, @Body Auto auto);
