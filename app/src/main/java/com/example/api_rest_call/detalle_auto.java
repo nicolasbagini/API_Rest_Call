@@ -148,6 +148,8 @@ public class detalle_auto extends AppCompatActivity {
 
         Call<Auto> http_update = autoService.Update(id, auto);
 
+        // aca falla?
+
         http_update.enqueue(new Callback<Auto>() {
             @Override
             public void onResponse(Call<Auto> call, Response<Auto> response) {
